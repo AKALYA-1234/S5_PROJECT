@@ -17,10 +17,14 @@ function App() {
                     <Route path="/" element={<Navigate to="/dashboard" replace />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/studio" element={<ContentStudio />} />
+                    <Route path="/content-studio" element={<ContentStudio />} />
                     <Route path="/isl" element={<ISLResourceCenter />} />
+                    <Route path="/isl-resources" element={<ISLResourceCenter />} />
                     <Route path="/materials" element={<LearningMaterials />} />
+                    <Route path="/learning-materials" element={<LearningMaterials />} />
                     <Route path="/assessments" element={<Assessments />} />
                     <Route path="/quality" element={<QualityAccessibility />} />
+                    <Route path="/quality-accessibility" element={<QualityAccessibility />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Route>

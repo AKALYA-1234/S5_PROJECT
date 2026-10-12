@@ -13,12 +13,12 @@ import {
 import { StudentBannerIllustration } from './SVGIcons'
 
 const navItems = [
-    { name: 'Dashboard', path: '/', icon: LayoutDashboard },
-    { name: 'Content Studio', path: '/content-studio', icon: FileEdit },
-    { name: 'ISL Resource Center', path: '/isl-resources', icon: Hand },
-    { name: 'Learning Materials', path: '/learning-materials', icon: BookOpen },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { name: 'Content Studio', path: '/studio', icon: FileEdit },
+    { name: 'ISL Resource Center', path: '/isl', icon: Hand },
+    { name: 'Learning Materials', path: '/materials', icon: BookOpen },
     { name: 'Assessments', path: '/assessments', icon: CheckSquare },
-    { name: 'Quality & Accessibility', path: '/quality-accessibility', icon: ShieldCheck },
+    { name: 'Quality & Accessibility', path: '/quality', icon: ShieldCheck },
 ]
 
 export const Sidebar = () => {
@@ -27,15 +27,15 @@ export const Sidebar = () => {
     // Dynamic banner title matching reference screenshots
     const getBannerTitle = () => {
         switch (location.pathname) {
-            case '/content-studio':
+            case '/studio':
                 return "Accessible Education Empowers Brighter Futures"
-            case '/isl-resources':
+            case '/isl':
                 return "Sign Learn Achieve Together"
-            case '/learning-materials':
+            case '/materials':
                 return "Accessible Learning Creates Greater Opportunities"
             case '/assessments':
                 return "Practice Learn Build Confidence"
-            case '/quality-accessibility':
+            case '/quality':
                 return "Ensuring Quality & High Accessibility"
             default:
                 return "Breaking Barriers Through Inclusive Education"
