@@ -13,7 +13,7 @@ import {
 import { StudentBannerIllustration } from './SVGIcons'
 
 const navItems = [
-    { name: 'Dashboard', path: '/', icon: LayoutDashboard },
+    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { name: 'Content Studio', path: '/content-studio', icon: FileEdit },
     { name: 'ISL Resource Center', path: '/isl-resources', icon: Hand },
     { name: 'Learning Materials', path: '/learning-materials', icon: BookOpen },
@@ -28,14 +28,18 @@ export const Sidebar = () => {
     const getBannerTitle = () => {
         switch (location.pathname) {
             case '/content-studio':
+            case '/studio':
                 return "Accessible Education Empowers Brighter Futures"
             case '/isl-resources':
+            case '/isl':
                 return "Sign Learn Achieve Together"
             case '/learning-materials':
+            case '/materials':
                 return "Accessible Learning Creates Greater Opportunities"
             case '/assessments':
                 return "Practice Learn Build Confidence"
             case '/quality-accessibility':
+            case '/quality':
                 return "Ensuring Quality & High Accessibility"
             default:
                 return "Breaking Barriers Through Inclusive Education"
@@ -109,7 +113,12 @@ export const Sidebar = () => {
             }}>
                 {navItems.map((item) => {
                     const Icon = item.icon
-                    const isActive = location.pathname === item.path
+                    const isActive = location.pathname === item.path ||
+                        (item.path === '/dashboard' && location.pathname === '/') ||
+                        (item.path === '/content-studio' && location.pathname === '/studio') ||
+                        (item.path === '/isl-resources' && location.pathname === '/isl') ||
+                        (item.path === '/learning-materials' && location.pathname === '/materials') ||
+                        (item.path === '/quality-accessibility' && location.pathname === '/quality')
 
                     return (
                         <NavLink

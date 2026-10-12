@@ -16,12 +16,30 @@ function App() {
                 <Route element={<MainLayout />}>
                     <Route path="/" element={<Navigate to="/dashboard" replace />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/studio" element={<ContentStudio />} />
-                    <Route path="/isl" element={<ISLResourceCenter />} />
-                    <Route path="/materials" element={<LearningMaterials />} />
+
+                    {/* Content Studio & Aliases */}
+                    <Route path="/content-studio" element={<ContentStudio />} />
+                    <Route path="/studio" element={<Navigate to="/content-studio" replace />} />
+
+                    {/* ISL Resource Center & Aliases */}
+                    <Route path="/isl-resources" element={<ISLResourceCenter />} />
+                    <Route path="/isl" element={<Navigate to="/isl-resources" replace />} />
+
+                    {/* Learning Materials & Aliases */}
+                    <Route path="/learning-materials" element={<LearningMaterials />} />
+                    <Route path="/materials" element={<Navigate to="/learning-materials" replace />} />
+
+                    {/* Assessments & Practice */}
                     <Route path="/assessments" element={<Assessments />} />
-                    <Route path="/quality" element={<QualityAccessibility />} />
+
+                    {/* Quality & Accessibility Lab & Aliases */}
+                    <Route path="/quality-accessibility" element={<QualityAccessibility />} />
+                    <Route path="/quality" element={<Navigate to="/quality-accessibility" replace />} />
+
+                    {/* Settings */}
                     <Route path="/settings" element={<Settings />} />
+
+                    {/* Fallback */}
                     <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Route>
             </Routes>
